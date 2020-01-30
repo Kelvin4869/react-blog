@@ -23,6 +23,39 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
+  config.mysql = {
+    // database configuration
+    client: {
+      // host
+      host: 'localhost',
+      // port
+      port: '3306',
+      // username
+      user: 'root',
+      // password
+      password: 'root',
+      // database
+      database: 'react_blog',  
+    },
+    // load into app, default is open
+    app: true,
+    // load into agent, default is close
+    agent: false,
+  };
+
+  config.security = {
+    csrf: {
+      enable: false
+    },
+    domainWhiteList: ['*']
+  };
+
+  config.cors = {
+    origin: 'http://localhost:3000',
+    credentials: true,   // 开启认证
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
+  }
+
   return {
     ...config,
     ...userConfig,
