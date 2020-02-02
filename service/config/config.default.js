@@ -35,7 +35,7 @@ module.exports = appInfo => {
       // password
       password: 'root',
       // database
-      database: 'react_blog',  
+      database: 'react_blog',
     },
     // load into app, default is open
     app: true,
@@ -45,16 +45,16 @@ module.exports = appInfo => {
 
   config.security = {
     csrf: {
-      enable: false
+      enable: false,
     },
-    domainWhiteList: ['*']
+    domainWhiteList: [ '*' ],
   };
 
   config.cors = {
     origin: 'http://localhost:3000',
-    credentials: true,   // 开启认证
-    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
-  }
+    credentials: true, // 开启认证,允许cookies跨域
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+  };
 
   return {
     ...config,
